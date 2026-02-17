@@ -17,7 +17,6 @@ const udpPort = new osc.UDPPort({
 udpPort.open();
 
 udpPort.on("message", (msg, timeTag, info) => {
-  // msg: { address: "/foo", args: [...] }
   const payload = {
     address: msg.address,
     args: msg.args,
