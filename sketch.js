@@ -11,8 +11,7 @@ function setup() {
   socket.onopen = () => {
     status = "¡CONECTADO Y ACTIVADO!";
     console.log("Conexión abierta. Enviando saludo inicial...");
-
-    socket.send(JSON.stringify({ type: 'init' }));
+    // socket.send(JSON.stringify({ type: 'init' }));
   };
 
 socket.onmessage = (event) => {
@@ -39,7 +38,6 @@ function draw() {
   textSize(20);
   text(status, 20, 40);
   
-  // Dibujamos algo que se mueva con el valor para confirmar visualmente
   fill(0, 255, 0);
   rect(20, 100, val * (width - 40), 50);
   
