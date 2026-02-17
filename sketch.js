@@ -11,9 +11,7 @@ function setup() {
   socket.onopen = () => {
     status = "¡CONECTADO Y ACTIVADO!";
     console.log("Conexión abierta. Enviando saludo inicial...");
-    
-    // ESTA LÍNEA ES EL TRUCO: 
-    // Le pedimos al servidor que nos tome en cuenta para las actualizacion es
+
     socket.send(JSON.stringify({ type: 'init' }));
   };
 
