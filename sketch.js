@@ -20,6 +20,20 @@ socket.onmessage = (event) => {
 
   const a0 = data.args?.[0];
   val = (a0 && typeof a0 === "object" && "value" in a0) ? a0.value : (a0 ?? 0);
+  /*
+    const a0 = data.args?.[0];
+    
+    if (a0 === null || a0 === undefined) {
+      // No llegó ningún argumento
+      val = 0;
+    } else if (typeof a0 === "object" && "value" in a0) {
+      // Llegó como objeto OSC típico: { type: "...", value: ... }
+      val = a0.value;
+    } else {
+      // Llegó como número (u otro tipo) directo
+      val = a0;
+    }
+  */
 
   status = "Recibiendo de: " + data.address;
 };
